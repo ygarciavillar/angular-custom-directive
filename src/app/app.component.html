@@ -42,7 +42,10 @@
 <br />
 
 <h2>Hidding Header after some seconds</h2>
-<section *hideAfter="5000; then anotherTemplate">
+<section
+  *hideAfter="5000; then anotherTemplate"
+  style="background: blue; color: white; padding: .5em;"
+>
   <h4>Temporary content</h4>
   <p>This should be <strong>hidde</strong> after 5 seconds</p>
 </section>
