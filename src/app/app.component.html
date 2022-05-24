@@ -10,4 +10,28 @@
 
 <p appHighlight [color]="color">Highlight me!!</p>
 
-<p appHighlight [color]="color" [defaultColor]="defaultColor">Highlight me too!!</p>
+<p appHighlight [color]="color" [defaultColor]="dColor">Highlight me too!!</p>
+
+<p *appUnless="condition" class="unless a">
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless="!condition" class="unless b">
+  (B) Although the condition is true,this paragraph is displayed because
+  appUnless is set to false.
+</p>
+
+<p>
+  The condition is currently
+  <span [ngClass]="{ a: !condition, b: condition, unless: true }">{{
+    condition
+  }}</span
+  >.
+  <button
+    type="button"
+    (click)="condition = !condition"
+    [ngClass]="{ a: condition, b: !condition }"
+  >
+    Toggle condition to {{ condition ? 'false' : 'true' }}
+  </button>
+</p>

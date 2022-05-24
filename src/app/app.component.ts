@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   fontSize = 16;
   color = '';
-  defaultColor = 'magenta';
+  dColor = 'magenta';
+  condition = false;
 }
