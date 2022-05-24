@@ -12,6 +12,10 @@
 
 <p appHighlight [color]="color" [defaultColor]="dColor">Highlight me too!!</p>
 
+<h1>My First Structural Directive</h1>
+
+<h2>Content showing conditionally</h2>
+
 <p *appUnless="condition" class="unless a">
   (A) This paragraph is displayed because the condition is false.
 </p>
@@ -35,3 +39,15 @@
     Toggle condition to {{ condition ? 'false' : 'true' }}
   </button>
 </p>
+<br />
+
+<h2>Hidding Header after some seconds</h2>
+<section *hideAfter="5000; then anotherTemplate">
+  <h4>Temporary content</h4>
+  <p>This should be <strong>hidde</strong> after 5 seconds</p>
+</section>
+
+<ng-template #anotherTemplate>
+  <h4>Supplent content</h4>
+  <p>This should be <strong>showed</strong> after 5 seconds</p>
+</ng-template>
